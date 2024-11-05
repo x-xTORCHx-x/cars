@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#gameArea {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid #000;
+    overflow: hidden;
+    background-image: url('roadd.png'); /* Update this with your image path */
+    background-size: cover; /* Makes sure the image covers the whole area */
+    background-position: center; /* Center the image */
+    animation: moveBackground 0.20s linear infinite; /* Add animation */
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: center down;
+    }
+    100% {
+        background-position: center top; /* Moves the image down */
+    }
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.1s ease; /* Adiciona a transição suave */
+}
+#player2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: green; /* Cor do segundo jogador */
+    bottom: 20px;
+    left: calc(50% + 60px); /* Inicializa um pouco à direita do primeiro jogador */
+    transform: translateX(-50%);
+    transition: left 0.1s ease, bottom 0.1s ease; /* Adiciona a transição suave */
+}
+
+.object {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transition: top 0.1s linear; /* Adiciona a transição suave */
+}
+
+
